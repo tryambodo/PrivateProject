@@ -5,9 +5,12 @@
     tools:context="id.sch.smktelkom_mlg.privateassignment.xirpl305.privateproject.Fragment2">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:text="Hello Blank Fragment">
+
+    </android.support.v7.widget.RecyclerView>
 
 </FrameLayout>

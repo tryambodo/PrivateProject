@@ -54,14 +54,6 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
     }
 
@@ -137,8 +129,20 @@ public class MainActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+            if(position == 0)
+            {
+                return new Fragment1();
+            }else if (position == 1)
+            {
+                return new Fragment2();
+            }else if (position == 2)
+            {
+                return new Fragment3();
+            }else {
+                return PlaceholderFragment.newInstance(position + 1);
+            }
         }
+
 
         @Override
         public int getCount() {
@@ -150,11 +154,11 @@ public class MainActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "SECTION 1";
+                    return "NOW PLAYING";
                 case 1:
-                    return "SECTION 2";
+                    return "TOP MOVIE";
                 case 2:
-                    return "SECTION 3";
+                    return "RECOMENDED";
             }
             return null;
         }
