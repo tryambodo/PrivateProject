@@ -6,6 +6,7 @@ import com.android.volley.toolbox.Volley;
 
 import id.sch.smktelkom_mlg.privateassignment.xirpl305.privateproject.Fragment1;
 import id.sch.smktelkom_mlg.privateassignment.xirpl305.privateproject.Fragment2;
+import id.sch.smktelkom_mlg.privateassignment.xirpl305.privateproject.Fragment3;
 
 /**
  * Created by ASUS TP 450 LDV on 5/13/2017.
@@ -15,6 +16,7 @@ public class VolleySingleton
     private static volatile VolleySingleton mInstance;
     private static Fragment2 mCtx;
     private static Fragment1 mCtx1;
+    private static Fragment3 mCtx3;
     private RequestQueue mRequestQueue;
 
     private VolleySingleton(Fragment2 context)
@@ -37,6 +39,15 @@ public class VolleySingleton
         mRequestQueue = getRequestQueue();
     }
 
+    private VolleySingleton(Fragment3 context3) {
+        if (mInstance != null) {
+            throw new RuntimeException(
+                    "Use getInstance() method to get the single instance of this class");
+        }
+        mCtx3 = context3;
+        mRequestQueue = getRequestQueue();
+    }
+
     public static VolleySingleton getInstance(Fragment2 context)
     {
         if (mInstance == null)
@@ -55,6 +66,15 @@ public class VolleySingleton
         {
             synchronized (VolleySingleton.class) {
                 if (mInstance == null) mInstance = new VolleySingleton(context1);
+            }
+        }
+        return mInstance;
+    }
+
+    public static VolleySingleton getInstance(Fragment3 context3) {
+        if (mInstance == null) {
+            synchronized (VolleySingleton.class) {
+                if (mInstance == null) mInstance = new VolleySingleton(context3);
             }
         }
         return mInstance;
