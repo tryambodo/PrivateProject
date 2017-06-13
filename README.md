@@ -23,7 +23,7 @@
     dari tiap tiap film yang disediakan.
     
 ## Kelebihan Kekurangan
-* Kelebihan : Dapat menunjukan data film.
+* Kelebihan  : Dapat menunjukan data film dan dapat dilihat meskipun tidak ada koneksi internet karena sudah dimasukkan kedalam database
 * Kekurangan : Belum adanya deskripsi yang lebih detail.
 
 ## Screenshot Aplikasi
